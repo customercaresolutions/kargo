@@ -1,42 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: kargo
+  name: kargo-demo
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: kargo
+      app: kargo-demo
   template:
     metadata:
       labels:
-        app: kargo
+        app: kargo-demo
     spec:
       containers:
-      - name: Clone gin-test repository
-        args: 
-            - git
-            - clone
-            - https://github.com/pc085n/gin-test.git
-            - gin
-        volumeMounts:
-        - name: gin-test
-          mountPath: gin
-      - name: Robot framework
-        image: gin-qa-solutions
-        args:
-            - docker
-            - run
-            - -v
-            - /home/ubuntu/gin/:/gin/
-            - gin-qa-solutions:latest
-            - /gin/results/
-            - /gin/tests/Main.robot
+      - name: nginx 
+        image: nginx:placeholder
         volumeMounts:
         - name: content
-          mountPath: /usr/share/robotframework/html
+          mountPath: /usr/share/nginx/html
           readOnly: true
       volumes:
       - name: content
         configMap:
-          name: kargo-content
+          name: kargo-demo-content

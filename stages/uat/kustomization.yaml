@@ -8,7 +8,7 @@ resources:
 patches:
 - target:
     kind: Service
-    name: kargo
+    name: kargo-demo
   patch: |-
     - op: replace
       path: /spec/ports/0/nodePort
