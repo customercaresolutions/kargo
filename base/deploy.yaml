@@ -13,8 +13,8 @@ spec:
         app: kargo-demo
     spec:
       containers:
-      - name: robotframework
-        image: robotframework
+      - name: ccipearl/gin-qa-solutions
+        image: ccipearl/gin-qa-solutions
         volumeMounts:
         - name: content
           mountPath: /usr/share/robotframework/html
