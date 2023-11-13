@@ -13,11 +13,11 @@ spec:
         app: kargo-demo
     spec:
       containers:
-      - name: nginx
-        image: nginx:placeholder
+      - name: robotframework
+        image: robotframework
         volumeMounts:
         - name: content
-          mountPath: /usr/share/nginx/html
+          mountPath: /usr/share/robotframework/html
           readOnly: true
       volumes:
       - name: content
