@@ -1,28 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: kargo
+  name: kargo-demo
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: kargo
+      app: kargo-demo
   template:
     metadata:
       labels:
-        app: kargo
+        app: kargo-demo
     spec:
       containers:
-      - name: Clone gin-test repository
-        args: 
-            - git
-            - clone
-            - https://github.com/pc085n/gin-test.git
-            - gin
+      - name: gin-qa-solutions
+        image: gin-qa-solutions:placeholder
         volumeMounts:
-        - name: gin-test
-          mountPath: gin
+        - name: content
+          mountPath: /usr/share/gin-qa-solutions/html
+          readOnly: true
       volumes:
       - name: content
         configMap:
-          name: kargo-content
+          name: kargo-demo-content
