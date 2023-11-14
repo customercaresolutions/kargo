@@ -13,8 +13,8 @@ spec:
         app: kargo-demo
     spec:
       containers:
-      - name: ccipearl/gin-qa-solutions
-        image: ccipearl/gin-qa-solutions
+      - name: gin-qa-solutions
+        image: docker.io/ccipearl/gin-qa-solutions@sha256:51bd95e79c57cc2d2151c833d42ca8997cebb92ad08e6e6afe66cd283ecaa32e
         volumeMounts:
         - name: content
           mountPath: /usr/share/robotframework/html
