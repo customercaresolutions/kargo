@@ -13,11 +13,11 @@ spec:
         app: kargo-demo
     spec:
       containers:
-      - name: gin-qa-solutions
-        image: gin-qa-solutions:placeholder
+      - name: nginx 
+        image: nginx:placeholder
         volumeMounts:
         - name: content
-          mountPath: /usr/share/gin-qa-solutions/html
+          mountPath: /usr/share/nginx/html
           readOnly: true
       volumes:
       - name: content
