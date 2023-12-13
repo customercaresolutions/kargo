@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: gin-qa-solutions
-        image: 172.31.27.186:5000/gin-qa-solutions:placeholder
+        image: 172.31.27.186:5000/gin-qa-solutions:1.0.2
         volumeMounts:
         - name: content
           mountPath: /usr/share/gin-qa-solutions/html
