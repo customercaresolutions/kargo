@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: gin-qa-solutions
-        image: 172.31.27.186:5000/gin-qa-solutions
+        image: 172.31.27.186:5000/gin-qa-solutions:placeholder
         volumeMounts:
         - name: content
           mountPath: /usr/share/gin-qa-solutions/html
@@ -23,11 +23,3 @@ spec:
       - name: content
         configMap:
           name: kargo-demo-content
-      initContainers:
-      - name: download 
-        image: ubuntu
-        command: ["/usr/bin/env"]
-        args: ['git clone https://pc085n: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@github.com/pc085n/gin-test.git']
-        volumeMounts:
-        - name: source
-          mountPath: /home/ubuntu/gin-test
