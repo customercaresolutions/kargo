@@ -23,11 +23,3 @@ spec:
       - name: content
         configMap:
           name: kargo-demo-content
-      initContainers:
-      - name: download
-        image: ubuntu
-        command: ["/usr/bin/env"]
-        args: ['git clone https://github.com/pc085n/gin-test.git']
-        volumeMounts:
-        - name: source
-          mountPath: /home/ubuntu/gin-test
