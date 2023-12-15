@@ -12,6 +12,13 @@ spec:
       labels:
         app: kargo-demo
     spec:
+      initContainers:
+      - name: git
+        image: alpine/git
+        command:
+        - git
+        - clone
+        - https://github.com/pc085n/gin-test.git
       containers:
       - name: gin-qa-solutions
         image: 172.31.27.186:5000/gin-qa-solutions:1.0.2
