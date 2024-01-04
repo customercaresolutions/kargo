@@ -15,18 +15,32 @@ spec:
       initContainers:
       - name: git
         image: alpine/git
-        command:
-        - git
-        - clone
-        - https://github.com/pc085n/gin-test.git      
+        command: ["/bin/sh", "-c", "if [ -d /data/kargo ]; then cd /data/kargo; git pull; else git clone --single-branch -- https://$(GITHUB_USERNAME):$(GITHUB_PAT)@github.com/pc085n/gin-test.git /data/kargo; fi"]
+        env:
+        - name: GITHUB_USERNAME
+          valueFrom:
+            secretKeyRef:
+              key: username
+              name: kargo-demo-repo
+        - name: GITHUB_PAT
+          valueFrom:
+            secretKeyRef:
+              key: password
+              name: kargo-demo-repo
+        volumeMounts:
+        - mountPath: /data
+          name: test-volume
       containers:
       - name: gin-qa-solutions
         image: 172.31.27.186:5000/gin-qa-solutions:1.0.2
         volumeMounts:
-        - name: content
+        - name: test-volume
           mountPath: /usr/share/gin-qa-solutions/html
           readOnly: true
       volumes:
       - name: content
         configMap:
           name: kargo-demo-content
+      - name: test-volume
+        persistentVolumeClaim:
+          claimName: kargo-pvc
