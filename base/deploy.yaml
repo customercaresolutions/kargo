@@ -28,14 +28,14 @@ spec:
               key: password
               name: kargo-demo-repo
         volumeMounts:
-        - mountPath: /home/ubuntu/shared/kargo
+        - mountPath: /data
           name: test-volume
       containers:
       - name: gin-qa-solutions
         image: 172.31.27.186:5000/gin-qa-solutions:1.0.3
         volumeMounts:
         - name: test-volume
-          mountPath: /home/ubuntu/shared/kargo
+          mountPath: /usr/share/gin-qa-solutions/html
       volumes:
       - name: content
         configMap:
