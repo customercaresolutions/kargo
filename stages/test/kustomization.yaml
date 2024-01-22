@@ -15,5 +15,5 @@ patches:
       value: 30081
 images:
 - name: gin-qa-solutions
-  newName: gin-qa-solutions
+  newName: cci-repo.cci-dev.com:5000/gin-qa-solutions
   newTag: 1.0.3
