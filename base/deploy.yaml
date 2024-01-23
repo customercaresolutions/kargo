@@ -32,7 +32,8 @@ spec:
           name: test-volume
       containers:
       - name: gin-qa-solutions
-        image: cci-repo.cci-dev.com:5000/gin-qa-solutions:1.0.2
+        image: 172.31.27.186:5000/gin-qa-solutions:1.0.2
+        imagePullPolicy: Always
         volumeMounts:
         - name: test-volume
           mountPath: /usr/share/gin-qa-solutions/html
