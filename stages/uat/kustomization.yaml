@@ -16,4 +16,4 @@ patches:
 images:
 - name: 172.31.27.186:5000/gin-qa-solutions
   newName: 172.31.27.186:5000/gin-qa-solutions
-  newTag: 1.0.2
+  newTag: 1.0.3
