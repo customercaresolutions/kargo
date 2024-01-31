@@ -32,7 +32,7 @@ spec:
           name: test-volume
       containers:
       - name: gin-qa-solutions
-        image: 172.31.27.186:5000/gin-qa-solutions:1.0.2
+        image: docker.io/ccipearl/gin-qa-solutions:1.0.2
         imagePullPolicy: Always
         volumeMounts:
         - name: test-volume
