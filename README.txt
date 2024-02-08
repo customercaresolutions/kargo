@@ -55,7 +55,7 @@ stringData:
   type: image
   url: docker.io/ccipearl/gin-qa-solutions
   username: 'ccipearl'
-  password: 'goran2000'
+  password: '<PASSWORD>'
 EOF
 
 5) Create credentials for test repo, as follows:
@@ -73,7 +73,7 @@ stringData:
   type: git
   url: https://github.com/pc085n/gin-test
   username: 'pc085n'
-  password: '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'
+  password: '<PASSWORD>'
 EOF
 
 6) Define pv (persistent volume), as follows:
