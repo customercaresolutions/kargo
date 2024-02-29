@@ -71,7 +71,7 @@ metadata:
     kargo.akuity.io/secret-type: repository
 stringData:
   type: git
-  url: https://github.com/pc085n/gin-test
+  url: https://github.com/customercaresolutions/gin-test.git
   username: 'pc085n'
   password: '<PASSWORD>'
 EOF
@@ -111,7 +111,7 @@ spec:
       repoURL: docker.io/ccipearl/gin-qa-solutions
       semverConstraint: ^1.0.0
   - git:
-      repoURL: https://github.com/pc085n/gin-test
+      repoURL: https://github.com/customercaresolutions/gin-test.git
 ---
 apiVersion: kargo.akuity.io/v1alpha1
 kind: Stage
